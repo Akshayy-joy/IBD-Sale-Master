@@ -8,16 +8,16 @@ exports.getDataByKeyword = async (req, res) => {
         let values = [];
 
         if (keyword === 'Dailytracker') {
-            query = 'SELECT country, abm, user_region FROM xah_december_data WHERE 1=1';
+            query = 'SELECT rcluster , inr_salesvalue FROM xah_december_data WHERE 1=1';
 
         } else if (keyword === 'MONTHWISE') {
-            query = 'SELECT rcluster, product_group FROM xah_december_data WHERE 1=1';
+            query = 'SELECT rcluster , inr_salesvalue FROM xah_december_data WHERE 1=1';
 
         } else if (keyword === 'ECpb') {
             query = 'SELECT rcluster, product_group, discount, qty FROM xah_december_data WHERE 1=1';
 
         } else if (keyword === 'Country') {
-            query = 'SELECT user_region ,product_group, rcluster FROM xah_december_data WHERE 1=1';
+            query = 'SELECT rcluster , inr_salesvalue FROM xah_december_data WHERE 1=1';
 
         } else {
             return res.status(404).json({
